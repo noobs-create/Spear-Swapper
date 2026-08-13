@@ -6,7 +6,7 @@ import com.mojang.blaze3d.platform.InputConstants;
 import net.minecraft.client.Minecraft;
 
 import net.minecraft.resources.Identifier;
-import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
+import net.fabricmc.fabric.api.client.keymapping.v1.KeyMappingHelper;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 
@@ -33,7 +33,7 @@ public class SpearHelperClient implements ClientModInitializer {
 		Identifier categoryId = Identifier.fromNamespaceAndPath("spearhelper", "main");
 		KeyMapping.Category customCategory = new KeyMapping.Category(categoryId);
 
-		swapAndClickKey = KeyBindingHelper.registerKeyBinding(new KeyMapping(
+		swapAndClickKey = KeyMappingHelper.registerKeyMapping(new KeyMapping(
 				"key.spearhelper.swap_click",
 				InputConstants.Type.KEYSYM,
 				GLFW.GLFW_KEY_R,
