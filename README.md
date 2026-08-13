@@ -30,5 +30,5 @@
 
 ## Credits
 
-This is a fork/port of [Spear Helper](https://modrinth.com/mod/spear-helper) by shuraa-lox, updated for Minecraft 26.2.
+This is a fork/port of [Spear Helper](https://modrinth.com/mod/spear-helper) by @shuraa-lox, updated for Minecraft 26.2.
 If you want the original, go there instead.
