@@ -16,6 +16,7 @@ repositories {
 
 loom {
 	splitEnvironmentSourceSets()
+	accessWidenerPath = file("src/main/resources/spearhelper.accesswidener")
 
 	mods {
 		"spearhelper" {
@@ -23,7 +24,6 @@ loom {
 			sourceSet sourceSets.client
 		}
 	}
-
 }
 
 dependencies {

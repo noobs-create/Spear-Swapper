@@ -19,7 +19,6 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Arrays;
 
-
 public class SpearHelperClient implements ClientModInitializer {
 	public KeyMapping swapAndClickKey;
 	private int originalSlot = -1;
@@ -43,30 +42,25 @@ public class SpearHelperClient implements ClientModInitializer {
 		ClientTickEvents.END_CLIENT_TICK.register(client -> {
 			if (client.player == null || client.level == null) return;
 
-
 			if (swapAndClickKey.isDown()) {
 				int spearSlot = findLungeSpear(client);
 				if (originalSlot == -1) {
 					originalSlot = client.player.getInventory().getSelectedSlot();
 				}
 
-				if (client.player.getAttackStrengthScale(0) >= 1.0f) {
+				if (client.player.getAttackStrengthScale(0) >= 0.75f) {
 					if (spearSlot != -1) {
 						client.player.getInventory().setSelectedSlot(spearSlot);
-
 						try {
-							java.lang.reflect.Method method = Minecraft.class.getDeclaredMethod("method_1536");
+							java.lang.reflect.Method method = Minecraft.class.getDeclaredMethod("startAttack");
 							method.setAccessible(true);
 							method.invoke(client);
-						} catch (Exception ignored) {}
-
-
+						} catch (Exception e) {
+							LOGGER.error("Failed to call startAttack: " + e.getMessage());
+						}
 						client.player.getInventory().setSelectedSlot(originalSlot);
-
-
+						originalSlot = -1;
 					}
-				}else{
-					LOGGER.info(String.valueOf(client.player.getAttackStrengthScale(0)));
 				}
 			} else {
 				originalSlot = -1;
@@ -79,15 +73,15 @@ public class SpearHelperClient implements ClientModInitializer {
 		Item[] spears = {Items.WOODEN_SPEAR, Items.STONE_SPEAR, Items.COPPER_SPEAR, Items.GOLDEN_SPEAR, Items.IRON_SPEAR, Items.DIAMOND_SPEAR, Items.NETHERITE_SPEAR};
 
 		for (int i = 0; i < 9; i++) {
-			ItemStack stack = client.player.getInventory().getItem(i);
+			if (client.player != null) {
+				ItemStack stack = client.player.getInventory().getItem(i);
 
 			if (Arrays.asList(spears).contains(stack.getItem())) {
 				return i;
+			}
 			}
 		}
 
 		return -1;
 	}
-
-
 }
