@@ -16,7 +16,7 @@
 	"environment": "*",
 	"entrypoints": {
 		"client": [
-			"com.s0ftpulse.client.SpearHelperClient"
+			"com.noobs_create.client.SpearHelperClient"
 		]
 	},
 	"mixins": [

@@ -1,4 +1,4 @@
-package com.s0ftpulse;
+package com.noobs_create;
 
 import net.fabricmc.api.ModInitializer;
 
