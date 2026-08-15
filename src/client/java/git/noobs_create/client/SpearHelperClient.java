@@ -1,4 +1,4 @@
-package com.noobs_create.client;
+package git.noobs_create.client;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.minecraft.client.KeyMapping;

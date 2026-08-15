@@ -3,26 +3,34 @@
 	"id": "spearhelp",
 	"version": "${version}",
 	"name": "Spear Helper",
-	"description": "The mod is helping u to use ur lunge spear simple! @s0ftpulse",
+	"description": "The Mod Is Helping You To Use Your Lunge Spear Simple!",
 	"authors": [
 		"PrayoadMii",
 		"FeO_3"
 	],
 	"contact": {
-		"homepage": "https://github.com/shuraa-lox"
+		"homepage": "https://modrinth.com/mod/spear-helper-fork"
 	},
 	"license": "CC0-1.0",
-	"icon": "assets/spearhelper/icon.png",
+	"icon": "assets/icon.png",
 	"accessWidener": "spearhelper.accesswidener",
 	"environment": "*",
 	"entrypoints": {
 		"client": [
-			"com.noobs_create.client.SpearHelperClient"
+			"git.noobs_create.client.SpearHelperClient"
 		]
 	},
 	"mixins": [
 		"spearhelper.mixins.json"
 	],
+	"custom": {
+		"modmenu": {
+			"links": {
+				"modmenu.modrinth": "https://modrinth.com/mod/spear-helper-fork",
+				"modmenu.discord": "https://discord.gg/vkFJhzFmYY"
+			}
+		}
+	},
 	"depends": {
 		"fabricloader": ">=0.19.3",
 		"minecraft": "~26.2",
