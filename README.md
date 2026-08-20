@@ -20,7 +20,7 @@
 2. Make sure your spear has the Lunge enchantment
 3. Select a slot with low or no cooldown before activating
 
-   ✅ Good slots: bread, golden carrot, wind charge, ender pearl  
+   ✅ Good slots: bread, golden carrot, wind charge, ender pearl, empty hand  
    ❌ Bad slots: sword, mace, axe, pickaxe
 
 4. Hold the keybind for continuous lunging, or press once for single use
